@@ -1,259 +1,482 @@
-[![GitHub stars](https://img.shields.io/github/stars/NawfalMotii79/PLFM_RADAR?style=social)](https://github.com/NawfalMotii79/PLFM_RADAR/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/NawfalMotii79/PLFM_RADAR?style=social)](https://github.com/NawfalMotii79/PLFM_RADAR/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/NawfalMotii79/PLFM_RADAR?style=social)](https://github.com/NawfalMotii79/PLFM_RADAR/watchers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Hardware: CERN-OHL-P](https://img.shields.io/badge/Hardware-CERN--OHL--P-blue.svg)](https://ohwr.org/cern_ohl_p_v2.txt)
-[![Starlog](https://img.shields.io/badge/Starlog-Deep_Dive-00e5ff?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyTDkgOUgyTDcgMTRMNSAyMkwxMiAxN0wxOSAyMkwxNyAxNEwyMiA5SDE1TDEyIDJaIi8+PC9zdmc+)](https://starlog.is/articles/data-knowledge/nawfalmotii79-plfm-radar)
-# AERIS-10: Open Source Pulse Linear Frequency Modulated Phased Array Radar
+<div align="center">
 
-[![Hardware: CERN-OHL-P](https://img.shields.io/badge/Hardware-CERN--OHL--P-blue.svg)](https://ohwr.org/cern_ohl_p_v2.txt)
-[![Software: MIT](https://img.shields.io/badge/Software-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange)](https://github.com/NawfalMotii79/PLFM_RADAR)
-[![Features: Work in Progress](https://img.shields.io/badge/Features-Work_in_Progress-yellow)](https://github.com/NawfalMotii79/PLFM_RADAR/issues)
-[![Frequency: 10.5GHz](https://img.shields.io/badge/Frequency-10.5GHz-blue)](https://github.com/NawfalMotii79/PLFM_RADAR)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NawfalMotii79/PLFM_RADAR/pulls)
+<img width="220" src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" />
 
+# 📡 AERIS-10 PLFM Radar System
 
-AERIS-10 is an open-source, low-cost 10.5 GHz phased array radar system featuring Pulse Linear Frequency Modulated (LFM) modulation. Available in two versions (3km and 20km range), it's designed for researchers, drone developers, and serious SDR enthusiasts who want to explore and experiment with phased array radar technology.
+### Sistema Open Source de Radar Phased Array con modulación Pulse LFM 🚀
 
-![AERIS-10 Antenna Array](https://raw.githubusercontent.com/NawfalMotii79/PLFM_RADAR/main/8_Utils/Antenna_Array.jpg)
+<p align="center">
+  <b>AERIS-10</b> es una plataforma de radar open source diseñada para investigación, SDR avanzado y desarrollo de tecnologías de detección mediante arreglos phased array de 10.5 GHz.
+</p>
 
-## 📡 Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenSource-RADAR-blueviolet?style=for-the-badge">
+  <img src="https://img.shields.io/badge/FPGA-SignalProcessing-orange?style=for-the-badge&logo=xilinx&logoColor=white">
+  <img src="https://img.shields.io/badge/STM32-Embedded-blue?style=for-the-badge&logo=stmicroelectronics&logoColor=white">
+  <img src="https://img.shields.io/badge/Python-GUI-3776AB?style=for-the-badge&logo=python&logoColor=white">
+</p>
 
-The AERIS-10 project aims to democratize radar technology by providing a fully open-source, modular, and hackable radar system. Whether you're a university researcher, a drone startup, or an advanced maker, AERIS-10 offers a platform for experimenting with beamforming, pulse compression, Doppler processing, and target tracking.
+<p align="center">
+  <img src="https://img.shields.io/github/stars/NawfalMotii79/PLFM_RADAR?style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/NawfalMotii79/PLFM_RADAR?style=for-the-badge">
+  <img src="https://img.shields.io/github/watchers/NawfalMotii79/PLFM_RADAR?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+</p>
 
-## 🔬 Key Features
+<p align="center">
+  <a href="#-acerca-del-proyecto">Acerca</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-arquitectura">Arquitectura</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-documentación">Documentación</a>
+</p>
 
-- **Open Source Hardware & Software** - Complete schematics, PCB layouts, firmware, and software available
-- **Dual Version Availability**:
-  - **AERIS-10N (Nexus)**: 3km range with 8x16 patch antenna array
-  - **AERIS-10E (Extended)**: 20km range with 32x16 dielectric-filled slotted waveguide array
-- **Full Electronic Beam Steering** - ±45° electronic steering in elevation and azimuth
-- **Advanced Signal Processing** - On-board FPGA handles pulse compression, Doppler FFT, MTI, and CFAR
-- **Python GUI** - User-friendly interface with map integration
-- **GPS/IMU Integration** - Real-time position and attitude correction
-- **Modular Design** - Separate power management, frequency synthesis, and RF boards
-
-## 🏗️ System Architecture
-
-![AERIS-10 System Diagram](https://raw.githubusercontent.com/NawfalMotii79/PLFM_RADAR/main/8_Utils/RADAR_V6_V2.png)
-
-### Hardware Components
-
-The AERIS-10 main sub-systems are:
-
-- **Power Management Board** - Supplies all necessary voltage levels to the electronics components with proper filtering and sequencing (sequencing ensured by the microcontroller)
-
-- **Frequency Synthesizer Board** - Uses a high-performance Low Jitter Clock Generator (AD9523-1) that supplies phase-aligned clock references for:
-  - RX and TX Frequency Synthesizers (ADF4382)
-  - DAC
-  - ADC
-  - FPGA
-
-- **Main Board** containing:
-  - **DAC** - Generates the RADAR Chirps
-  - **2x Microwave Mixers (LTC5552)** - For up-conversion and IF-down-conversion
-  - **4x 4-Channel Phase Shifters (ADAR1000)** - For RX and TX chain beamforming
-  - **16x Front End Chips (ADTR1107)** - Used for both Low Noise Amplifying (RX) and Power Amplifying (TX) stages
-  - **XC7A50T FPGA** - Handles RADAR Signal Processing on the upstream FTG256 board:
-    - PLFM Chirps generation via the DAC
-    - Raw ADC data read
-    - Hybrid Automatic Gain Control (AGC) — cross-layer FPGA/STM32/GUI loop
-    - I/Q Baseband Down-Conversion
-    - Decimation
-    - Filtering
-    - Forward FFT
-    - Pulse Compression
-    - Doppler, MTI and CFAR processing
-    - USB Interface
-  - **STM32F746xx Microcontroller** - Used for:
-    - Power-up and power-down sequencing (see Power Management Excel File)
-    - FPGA communication
-    - Setup and Interface with:
-      - Clock Generator (AD9523-1)
-      - 2x Frequency Synthesizers (ADF4382)
-      - 4x 4-Channel Phase Shifters (ADAR1000) for RADAR pulse sequencing
-      - 2x ADS7830 8-channel I²C ADCs (Main Board, U88 @ 0x48 / U89 @ 0x4A) for 16x Idq measurement, one per PA channel, each sensed through a 5 mΩ shunt on the PA board and an INA241A3 current-sense amplifier (x50) on the Main Board
-      - 2x DAC5578 8-channel I²C DACs (Main Board, U7 @ 0x48 / U69 @ 0x49) for 16x Vg control, one per PA channel; closed-loop calibrated at boot to the target Idq
-      - GPS module (UM982) for GUI map centering and per-detection position tagging
-      - GY-85 IMU for pitch/roll correction of target coordinates
-      - BMP180 Barometer
-      - Stepper Motor
-      - 1x ADS7830 8-channel I²C ADC (Main Board, U10) reading 8 thermistors for thermal monitoring; a single GPIO (EN_DIS_COOLING) switches the cooling fans on when any channel exceeds the threshold
-      - RF switches
-
-- **16x Power Amplifier Boards** - Used only for AERIS-10E version, featuring 10Watt QPA2962 GaN amplifier for extended range
-
-- **Antenna Arrays**:
-  - **AERIS-10N (Nexus)** - 8x16 patch antenna array
-  - **AERIS-10X (Extended)** - 32x16 dielectric-filled slotted waveguide antenna array
-
-- **Miscellaneous Components**:
-  - Slip-Ring
-  - Stepper Motor and drivers
-  - Cooling Fans
-  - Enclosure
-
-### Processing Pipeline
-
-1. **Waveform Generation** - DAC creates LFM chirps
-2. **Up/Down Conversion** - LTC5552 mixers handle frequency translation
-3. **Beam Steering** - ADAR1000 phase shifters control 16 elements
-4. **Signal Processing (FPGA)**:
-   - Raw ADC data capture
-   - I/Q baseband down-conversion
-   - Decimation & filtering (CIC/FIR)
-   - Pulse compression
-   - Doppler FFT processing
-   - MTI & CFAR detection
-5. **System Management (STM32)**:
-   - Power sequencing
-   - Peripheral configuration
-   - GPS/IMU integration
-   - Stepper motor control
-6. **Visualization (Python GUI)**:
-   - Real-time target plotting
-   - Map integration
-   - Radar control interface
-
-![AERIS-10 Dashboard](https://raw.githubusercontent.com/NawfalMotii79/PLFM_RADAR/main/8_Utils/GUI_V6.gif)
-<!-- V6 GIF removed — V6 is deprecated. V65 Tk and V7 PyQt6 are the active GUIs. -->
-
-## 📊 Technical Specifications
-
-| Parameter | AERIS-10N (Nexus) | AERIS-10X (Extended) |
-|-----------|-------------------|----------------------|
-| **Frequency** | 10.5 GHz | 10.5 GHz |
-| **Max Range** | 3 km | 20 km |
-| **Antenna** | 8x16 Patch Array | 32x16 Slotted Waveguide |
-| **Beam Steering** | Electronic (±45°) | Electronic (±45°) |
-| **Mechanical Scan** | 360° (stepper motor) | 360° (stepper motor) |
-| **Output Power** | ~1W×16 | 10W×16 (GaN amplifier) |
-| **Processing** | FPGA + STM32 | FPGA + STM32 |
-
-## 🚀 Getting Started
-
-### 🧹 Repository File Placement Policy
-
-To keep the repository root clean and make artifacts easy to find, place generated files in the following locations:
-
-- **Published reports (tracked, GitHub Pages):** `docs/`
-  - Example: `docs/AERIS_Simulation_Report_v2.pdf`
-- **Simulation-generated outputs (local, gitignored):** `5_Simulations/generated/`
-  - Plots, scenario outputs, temporary analysis directories
-- **FPGA/Vivado generated artifacts (local, gitignored):** `9_Firmware/9_2_FPGA/reports/`
-  - VCD/VVP dumps, temporary CSVs, local report snapshots
-- **Reusable FPGA automation scripts (tracked):** `9_Firmware/9_2_FPGA/scripts/`
-  - TCL flows, helper scripts used by build/bring-up
-
-**Do not leave generated artifacts in the repository root.**
-
-### Prerequisites
-
-- Basic understanding of radar principles
-- Experience with PCB assembly (for hardware build)
-- Python 3.8+ for the GUI software
-- FPGA development tools (Vivado) for signal processing modifications
-
-### Hardware Assembly
-
-1. **Order PCBs**: Production outputs are under `/4_Schematics and Boards Layout/4_7_Production Files`
-2. **Source Components**: BOM/CPL files are co-located under `/4_Schematics and Boards Layout/4_7_Production Files`
-3. **Assembly**: Use the schematics in `/4_Schematics and Boards Layout/4_6_Schematics` together with the production outputs above; a standalone assembly guide is not currently tracked
-4. **Antenna**: Choose appropriate array files for your target variant
-5. **Enclosure**: Mechanical drawings currently live in `/8_Utils/Mechanical_Drawings`
-
-## 📜 License
-
-This project is open-source but uses **different licenses for hardware and software** to ensure proper legal coverage.
-
-### Hardware Documentation
-The hardware design files—including:
-- Schematics and PCB layouts (in `/4_Schematics and Boards Layout`)
-- Bill of Materials (BOM) files
-- Gerber files and manufacturing outputs
-- Mechanical drawings and enclosure designs
-
-are licensed under the **CERN Open Hardware Licence Version 2 – Permissive (CERN-OHL-P)** .
-
-This is a hardware-specific license that:
-- ✅ Clearly defines "Hardware," "Documentation," and "Products"
-- ✅ Includes explicit patent protection for contributors and users
-- ✅ Provides stronger liability limitations (important for high-power RF)
-- ✅ Aligns with professional open-hardware standards (CERN, OSHWA)
-
-You may use, modify, and sell products based on these designs, provided you:
-- Maintain the original copyright notices
-- Distribute any modified designs under the same license
-- Make your modifications available in Source format
-
-### Software and Firmware
-The software components—including:
-- FPGA code (VHDL/Verilog in `/9_Firmware`)
-- Microcontroller firmware (STM32)
-- Python GUI and utilities
-
-remain under the **MIT License** for maximum flexibility.
-
-### Full License Texts
-- The complete CERN-OHL-P license text is in the `LICENSE` file
-- MIT license terms apply to software where not otherwise specified
-
-### Why This Change?
-Originally, the entire project used the MIT license. The community (special thanks to gmaynez!) pointed out that MIT lacks legal protections needed for physical hardware. The switch to CERN-OHL-P ensures the project is properly protected while maintaining the same permissive spirit.
-
-## 📚 Documentation
-
-Comprehensive documentation is available in the `/docs` folder and served via GitHub Pages at [https://NawfalMotii79.github.io/PLFM_RADAR/docs/](https://NawfalMotii79.github.io/PLFM_RADAR/docs/):
-
-- [System Architecture](/docs/architecture.html)
-- [Implementation Log](/docs/implementation-log.html)
-- [Hardware Bring-Up Guide](/docs/bring-up.html)
-- [Test Reports](/docs/reports.html)
-- [Release Notes](/docs/release-notes.html)
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](/CONTRIBUTING.md) for details on repo layout, branch workflow, and basic PR checks.
-
-Areas where help is especially appreciated:
-- **RF Engineers**: Review designs, optimize antenna performance
-- **FPGA Developers**: Optimize signal processing pipeline
-- **Software Developers**: Enhance Python GUI and SDK
-- **Beta Testers**: University researchers, drone startups, advanced makers
-
-## 📞 Contact & Collaboration
-
-I welcome serious inquiries from researchers, engineers, and potential collaborators. However, due to the high volume of interest in this project, please understand that I cannot guarantee a response to every message.
-
-- **Technical questions or bug reports**: Please [open a GitHub issue](https://github.com/NawfalMotii79/PLFM_RADAR/issues) so the whole community can benefit from the discussion.
-- **Collaboration, licensing, or business inquiries**: 📧 nawfal.motii.33 [at] gmail [dot] com
-
-## 💰 Sponsors
-
-![PCBWay Sponsor Logo](https://raw.githubusercontent.com/NawfalMotii79/PLFM_RADAR/main/8_Utils/PCBWAY.jpg)
+</div>
 
 ---
 
-**Star ⭐ this repository if you're interested in open-source radar technology!**
+# 🌌 Acerca del proyecto
 
-*Note: This is an active development project. Some features are still in progress. Check the issues page for known limitations and upcoming features.*
+**AERIS-10 PLFM Radar System** es un sistema radar open source basado en tecnología phased array y modulación Pulse Linear Frequency Modulated (PLFM), diseñado para investigación avanzada, experimentación SDR y desarrollo de sistemas de detección modernos.
 
-## 19,000 stars – Thank you
+La plataforma permite:
 
-This project started in a small workshop in Morocco. Today, 19,000 engineers on GitHub have starred it.
+- 📡 Desarrollo de radar phased array
+- 🧠 Procesamiento digital de señales
+- 🎯 Beam steering electrónico
+- 📊 Procesamiento Doppler y FFT
+- 🌍 Integración GPS/IMU
+- 🖥️ Visualización en tiempo real
+- ⚡ Investigación FPGA
+- 🚀 Experimentación RF avanzada
 
-I am genuinely humbled.
+---
 
-**What this tells me:**
+# ✨ Características
 
-- Open source radar matters
-- Affordable sensing is needed
-- Engineers want to build, not just buy
+## 📡 Sistema radar
 
-Thank you to everyone who starred, forked, opened issues, submitted PRs, and shared this project.
+- 📶 Modulación Pulse LFM
+- 🎯 Beam Steering ±45°
+- 📡 Antenas phased array
+- 🌐 Escaneo mecánico 360°
+- ⚡ Procesamiento en FPGA
+- 📊 Detección Doppler
 
-The work continues.
+---
 
-**Nawfal Motii**
-ABAC INDUSTRY
+## 🧠 Procesamiento DSP
+
+- FFT Processing
+- Pulse Compression
+- MTI Filtering
+- CFAR Detection
+- Down Conversion I/Q
+- Signal Filtering
+
+---
+
+## ⚙️ Arquitectura modular
+
+- 🔌 Power Management Board
+- 📡 Frequency Synthesizer
+- 🧠 FPGA Processing Unit
+- 📶 RF Front-End
+- 🛰️ GPS + IMU
+- ❄️ Thermal Monitoring
+
+---
+
+## 🖥️ GUI y visualización
+
+- GUI interactiva en Python
+- 📍 Integración de mapas
+- 📊 Visualización de targets
+- 🎛️ Panel de control radar
+- 📡 Monitoreo en tiempo real
+- 🔄 Comunicación USB
+
+---
+
+# 🛰️ Variantes del sistema
+
+## 📡 AERIS-10N (Nexus)
+
+Versión compacta enfocada en corto alcance.
+
+### Características
+
+- Alcance de 3 km
+- Antena 8x16 Patch Array
+- Bajo consumo energético
+- Diseño compacto
+- Ideal para pruebas SDR
+
+---
+
+## 🚀 AERIS-10X (Extended)
+
+Versión avanzada de largo alcance.
+
+### Características
+
+- Alcance de 20 km
+- Antena 32x16 Waveguide
+- Amplificadores GaN
+- Mayor potencia RF
+- Uso profesional y experimental
+
+---
+
+# 🏗️ Arquitectura del sistema
+
+## 🔌 Power Management
+
+Sistema encargado de alimentar y proteger todos los módulos electrónicos.
+
+### Funciones
+
+- Secuenciación eléctrica
+- Protección energética
+- Filtrado de voltajes
+- Gestión térmica
+
+---
+
+## 📡 Frequency Synthesizer
+
+Generación de frecuencias y sincronización del sistema radar.
+
+### Componentes
+
+- AD9523-1
+- ADF4382
+- DAC Clocking
+- ADC Synchronization
+
+---
+
+## 🧠 FPGA Processing
+
+Unidad central de procesamiento digital.
+
+### Funcionalidades
+
+- Generación de chirps
+- Captura ADC
+- FFT Doppler
+- Pulse Compression
+- MTI & CFAR
+- Comunicación USB
+
+---
+
+## 🎛️ STM32 Controller
+
+Microcontrolador principal del sistema.
+
+### Funciones
+
+- Configuración periférica
+- Control beamforming
+- GPS/IMU Integration
+- Thermal Monitoring
+- Stepper Motor Control
+- RF Switching
+
+---
+
+# 📊 Especificaciones técnicas
+
+| Característica | AERIS-10N | AERIS-10X |
+|----------------|-----------|------------|
+| Frecuencia | 10.5 GHz | 10.5 GHz |
+| Alcance | 3 km | 20 km |
+| Antena | 8x16 Patch Array | 32x16 Waveguide |
+| Beam Steering | ±45° | ±45° |
+| Escaneo | 360° | 360° |
+| Potencia | ~1W×16 | 10W×16 |
+| Procesamiento | FPGA + STM32 | FPGA + STM32 |
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+## ⚙️ Hardware
+
+<p>
+  <img src="https://skillicons.dev/icons?i=arduino,raspberrypi" />
+</p>
+
+- FPGA Xilinx
+- STM32
+- RF Electronics
+- ADAR1000
+- LTC5552
+- AD9523
+- ADF4382
+
+---
+
+## 🧠 Software
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python,c,cpp" />
+</p>
+
+- Python GUI
+- Embedded C
+- FPGA HDL
+- DSP Algorithms
+- Signal Processing
+
+---
+
+## 🧰 Herramientas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,linux" />
+</p>
+
+- Git
+- GitHub
+- Vivado
+- VS Code
+- Linux
+- SDR Toolchain
+
+---
+
+# 📂 Estructura del proyecto
+
+```bash
+PLFM_RADAR/
+│
+├── 1_Documentation/                # Documentación técnica
+├── 2_Theory/                       # Fundamentos radar
+├── 3_Software/                     # GUI y herramientas
+├── 4_Schematics and Boards Layout/ # PCB y esquemáticos
+├── 5_Simulations/                  # Simulaciones
+├── 6_Manufacturing/                # Producción
+├── 7_Testing/                      # Validación
+├── 8_Utils/                        # Recursos
+├── 9_Firmware/                     # Firmware FPGA/STM32
+├── docs/                           # GitHub Pages
+├── LICENSE
+└── README.md
+```
+
+---
+
+# ⚡ Instalación
+
+## 📋 Requisitos
+
+- Python 3.8+
+- Vivado FPGA Tools
+- STM32 Toolchain
+- Linux o Windows
+- Hardware RF compatible
+
+---
+
+# 🚀 Configuración del proyecto
+
+## 1️⃣ Clonar repositorio
+
+```bash
+git clone https://github.com/NawfalMotii79/PLFM_RADAR.git
+```
+
+---
+
+## 2️⃣ Entrar al proyecto
+
+```bash
+cd PLFM_RADAR
+```
+
+---
+
+## 3️⃣ Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Configurar FPGA
+
+Abrir proyecto en:
+
+```bash
+Vivado
+```
+
+Cargar firmware desde:
+
+```bash
+/9_Firmware/
+```
+
+---
+
+## 5️⃣ Ejecutar GUI
+
+```bash
+python main.py
+```
+
+---
+
+# 📡 Pipeline de procesamiento
+
+## 🔄 Flujo radar
+
+1. 📶 Generación de chirps LFM
+2. 📡 Conversión RF
+3. 🎯 Beam Steering
+4. 🧠 Captura ADC
+5. 📊 FFT Doppler
+6. 🎯 CFAR Detection
+7. 🖥️ Visualización GUI
+
+---
+
+# 📚 Documentación
+
+## 📖 Recursos disponibles
+
+- Arquitectura del sistema
+- Hardware Bring-Up
+- FPGA Reports
+- DSP Documentation
+- Release Notes
+- Simulation Reports
+
+---
+
+# 📊 Funcionalidades principales
+
+## 📡 Radar phased array
+
+- Beam steering electrónico
+- Escaneo dinámico
+- Control RF avanzado
+- Seguimiento de objetivos
+
+---
+
+## 🧠 DSP y FPGA
+
+- Procesamiento en tiempo real
+- FFT acelerada
+- Pulse compression
+- Filtrado digital
+
+---
+
+## 🛰️ Integración avanzada
+
+- GPS Tracking
+- IMU Correction
+- Thermal Monitoring
+- USB Communication
+
+---
+
+# 🧠 Objetivos del proyecto
+
+## 🎯 Investigación y desarrollo
+
+- Democratizar tecnología radar
+- Facilitar investigación SDR
+- Experimentación DSP
+- Desarrollo phased array
+- Aprendizaje FPGA
+- Sistemas embebidos avanzados
+
+---
+
+# 🚧 Roadmap
+
+## 🔮 Próximas mejoras
+
+- ☁️ Cloud Radar Processing
+- 🤖 AI Target Detection
+- 📱 Mobile Monitoring
+- 🌍 Tracking avanzado
+- 📡 Beamforming inteligente
+- ⚡ Optimización FPGA
+- 🛰️ Integración satelital
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Cómo contribuir
+
+1. Fork del proyecto
+
+```bash
+git checkout -b feature/new-feature
+```
+
+2. Commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+3. Push
+
+```bash
+git push origin feature/new-feature
+```
+
+4. Pull Request 🚀
+
+---
+
+# 👨‍💻 Desarrollador
+
+<div align="center">
+
+## Nawfal Motii — Radar Systems Engineer
+
+Ingeniero apasionado por sistemas radar open source, DSP, FPGA y tecnologías phased array 🚀
+
+</div>
+
+---
+
+# 🌟 Apoya el proyecto
+
+⭐ Dale una estrella  
+🍴 Haz fork  
+📢 Comparte el proyecto  
+🛰️ Contribuye al desarrollo open source
+
+---
+
+# 📜 Licencia
+
+Proyecto open source bajo:
+
+- 🛠️ CERN-OHL-P para hardware
+- 💻 MIT License para software y firmware
+
+Orientado a investigación, educación y desarrollo de tecnologías radar avanzadas.
+
+---
+
+<div align="center">
+
+### 📡 AERIS-10 PLFM Radar System — tecnología radar open source para la nueva generación 🚀
+
+</div>
