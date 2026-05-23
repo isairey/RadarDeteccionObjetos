@@ -252,7 +252,7 @@ Microcontrolador principal del sistema.
 # 📂 Estructura del proyecto
 
 ```bash
-PLFM_RADAR/
+RadarDeteccionObjetos/
 │
 ├── 1_Documentation/                # Documentación técnica
 ├── 2_Theory/                       # Fundamentos radar
@@ -287,7 +287,7 @@ PLFM_RADAR/
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/NawfalMotii79/PLFM_RADAR.git
+git clone https://github.com/isairey/RadarDeteccionObjetos.git
 ```
 
 ---
@@ -295,7 +295,7 @@ git clone https://github.com/NawfalMotii79/PLFM_RADAR.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd PLFM_RADAR
+cd RadarDeteccionObjetos
 ```
 
 ---
@@ -447,7 +447,7 @@ git push origin feature/new-feature
 
 <div align="center">
 
-## Nawfal Motii — Radar Systems Engineer
+## Isai Reyes — Radar Systems Engineer
 
 Ingeniero apasionado por sistemas radar open source, DSP, FPGA y tecnologías phased array 🚀
 
